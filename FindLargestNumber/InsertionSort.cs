@@ -1,17 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 namespace FindLargestNumber
 {
-    public class BubbleSort
+    public class InsertionSort
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="arrayToSort"></param>
-        /// <returns></returns>
         public long FindLargest(long[] arrayToSort)
         {
             long i, j, temp;
@@ -20,21 +14,22 @@ namespace FindLargestNumber
             long[] arr = arrayToSort;
             long n = arr.Length;
 
-            for (i = 1; i < n ; i++)
+            for (i = 0; i < n - 1; i++)
             {
-                for (j = 0; j < n-1; j++)
+                for (j = i + 1; j > 0; j--)
                 {
-                    if (arr[i] < arr[j])
-                    {  
-                        temp = arr[i];
-                        arr[i] = arr[j];
+                    if (arr[j - 1] > arr[j])
+                    {
+                        temp = arr[j - 1];
+                        arr[j - 1] = arr[j];
                         arr[j] = temp;
                     }
                 }
             }
             large = arr[n - 1];
-            
+
             return large;
         }
     }
 }
+   

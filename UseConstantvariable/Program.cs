@@ -1,12 +1,15 @@
 ﻿using System;
 
-namespace ConsoleApp1
+namespace UseConstantvariable
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            const int a = 100;
+
+            Console.WriteLine(a);
+
         }
     }
 }

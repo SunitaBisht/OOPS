@@ -10,26 +10,27 @@ namespace FindLargestNumber
         
         public static void Main(string[] args)
         {
-            int n1, n2, i;
-            List<int> intList = new List<int>();
-
-            //int[] arrayToSort = intList.ToArray();
+            long n1, n2, i;
+            List<long> longList = new List<long>();
 
             Console.WriteLine("Enter the numbers:");
-            n1 = int.Parse(Console.ReadLine());
-            n2 = int.Parse(Console.ReadLine());
+            n1 = long.Parse(Console.ReadLine());
+            n2 = long.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the number for divisor:");
+            long divisor = long.Parse(Console.ReadLine());
 
             for (i = n1 + 1; i < n2; i++)
             {
-                if (i % 3 == 0)
+                if (i % divisor == 0)
                 {
-                    intList.Add(i); 
+                    longList.Add(i); 
                 }
             }
-            int largest = BubbleSort.FindLargest(intList.ToArray());
+            InsertionSort insertion= new InsertionSort();
+            long largest = insertion.FindLargest(longList.ToArray());
             Console.WriteLine("The largest element is:" +largest);
         }
     }
 }
 
-          
